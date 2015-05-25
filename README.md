@@ -21,9 +21,9 @@ Copy `common/config.example.py` to `common/config.py` and edit it.
 
 `mysql> grant all privileges on database.* to username@localhost;`
 
-### Create table
+### Create tables
 
-`./createdb.py`
+`./createtables.py`
 
 ### Import User
 
