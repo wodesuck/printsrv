@@ -1,0 +1,41 @@
+{% macro paginate(pagination) %}
+  {% set page_count = pagination.get_page_count() %}
+  {% set page = pagination.get_page() %}
+  <div class="text-center">
+    <ul class="pagination">
+      {% if page > 1 %}
+        <li>
+          <a href="?page={{ page - 1 }}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+      {% else %}
+        <li class="disabled">
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+      {% endif %}
+      {% for i in range(1, page_count + 1) %}
+        {% if i == page %}
+          <li class="active"><a href="?page={{ i }}">{{ i }} </a></li>
+        {% else %}
+          <li><a href="?page={{ i }}">{{ i }} </a></li>
+        {% endif %}
+      {% endfor %}
+      {% if page < page_count %}
+        <li>
+          <a href="?page={{ page + 1 }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      {% else %}
+        <li class="disabled">
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+{% endmacro %}

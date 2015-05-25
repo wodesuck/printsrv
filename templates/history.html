@@ -1,0 +1,7 @@
+{% extends "frame.html" %}
+{% block title %}History - {{ entry.id }}{% endblock %}
+{% block active %}history{% endblock %}
+{% block main %}
+  <h4>#{{ entry.id }} printed by {{ entry.user.username }}</h4>
+  <pre>{{ entry.content }}</pre>
+{% endblock %}

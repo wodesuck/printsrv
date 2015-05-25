@@ -1,0 +1,27 @@
+{% extends "frame.html" %}
+{% import 'helpers.html' as helpers %}
+{% block title %}History{% endblock %}
+{% block active %}history{% endblock %}
+{% block main %}
+  <table id="history-list" class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Time</th>
+        <th>Content</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in object_list %}
+        <tr>
+          <th><a href="/history/{{ entry.id }}">{{ entry.id }}</a></th>
+          <td>{{ entry.timestamp }}</td>
+          <td><code>{{ entry.content[:50] }} ...</code></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% if pagination.get_page_count() > 1 %}
+    {{ helpers.paginate(pagination) }}
+  {% endif %}
+{% endblock %}
