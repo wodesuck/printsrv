@@ -8,17 +8,17 @@
 ## Setup
 
 ### Configure
-    Copy `common/config.example.py` to `common/config.py` and edit it.
+Copy `common/config.example.py` to `common/config.py` and edit it.
 ### Create database
-    `mysql> create database databasename;`
+`mysql> create database databasename;`
 ### Create user
-    `mysql> create user username@localhost identified by 'password';`
-    `mysql> grant all privileges on database.* to username@localhost;`
+`mysql> create user username@localhost identified by 'password';`
+`mysql> grant all privileges on database.* to username@localhost;`
 ### Create table
-    `./createdb.py`
+`./createdb.py`
 ### Import User
-    `./importuser.py user.csv`
+`./importuser.py user.csv`
 
 ## Run
 
-    `./app.py`
+`./app.py`
